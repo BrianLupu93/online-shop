@@ -7,6 +7,7 @@ import ProductDetails from "./components/productCard/ProductDetails";
 import Navbar from "./components/navbar/Navbar";
 import Cart from "./components/cart/Cart";
 import OrderDetails from "./components/orderDetails/OrderDetails";
+import HomeAdmin from "./components/hompage/HomeAdmin";
 
 function App() {
   return (
