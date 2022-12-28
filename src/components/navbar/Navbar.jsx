@@ -36,7 +36,7 @@ const Navbar = () => {
               </button>
             </form>
             <ul className="navbar-nav me-auto mb-2 mb-lg-0 px-5">
-              <li className="nav-item dropdown mx-5">
+              <li className="nav-item dropdown mx-4">
                 <a
                   className="nav-link dropdown-toggle"
                   href="/"
@@ -47,6 +47,11 @@ const Navbar = () => {
                   My Account
                 </a>
                 <ul className="dropdown-menu ">
+                  <li>
+                    <a className="dropdown-item" href="/login">
+                      Login
+                    </a>
+                  </li>
                   <li>
                     <a className="dropdown-item" href="/">
                       My Orders
@@ -71,7 +76,7 @@ const Navbar = () => {
                   aria-current="page"
                   to="/cart"
                 >
-                  Shopping Cart
+                  Shopping Cart<span className="cart-items-bubble">10</span>
                 </Link>
               </li>
             </ul>

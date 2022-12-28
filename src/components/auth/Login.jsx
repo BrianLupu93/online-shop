@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 const Login = () => {
   return (
     <div className="login-container">
+      <a className=" text-center text-body text-decoration-none" href="/">
+        <h3>e-SHOP</h3>
+      </a>
       <h1>Login</h1>
       <form>
         <div className="mb-3">

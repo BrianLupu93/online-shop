@@ -7,45 +7,21 @@ const Carousel = () => {
   return (
     <div className="carousel-container">
       <div
-        id="carouselExampleRide"
+        id="carouselExampleSlidesOnly"
         className="carousel slide"
-        data-bs-ride="true"
+        data-bs-ride="carousel"
       >
         <div className="carousel-inner">
           <div className="carousel-item active">
-            <img src={image1} className="d-block w-100" alt="..." />
+            <img src={image1} className="d-block w-100" alt="..1" />
           </div>
           <div className="carousel-item">
-            <img src={image2} className="d-block w-100" alt="..." />
+            <img src={image2} className="d-block w-100" alt="..2" />
           </div>
           <div className="carousel-item">
-            <img src={image3} className="d-block w-100" alt="..." />
+            <img src={image3} className="d-block w-100" alt="..3" />
           </div>
         </div>
-        <button
-          className="carousel-control-prev "
-          type="button"
-          data-bs-target="#carouselExampleRide"
-          data-bs-slide="prev"
-        >
-          <span
-            className="carousel-control-prev-icon "
-            aria-hidden="true"
-          ></span>
-          <span className="visually-hidden">Previous</span>
-        </button>
-        <button
-          className="carousel-control-next"
-          type="button"
-          data-bs-target="#carouselExampleRide"
-          data-bs-slide="next"
-        >
-          <span
-            className="carousel-control-next-icon"
-            aria-hidden="true"
-          ></span>
-          <span className="visually-hidden">Next</span>
-        </button>
       </div>
     </div>
   );

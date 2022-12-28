@@ -9,7 +9,7 @@ const OrderDetails = () => {
       <h1 className="mb-5">Order Details</h1>
       <form onSubmit={() => navigate("/")}>
         <div className="invoice-details row g-3">
-          <h5>Invoice details</h5>
+          <h5>Invoice</h5>
           <div className="col-md-6">
             <label htmlFor="lastName" className="form-label">
               Last Name
@@ -70,7 +70,7 @@ const OrderDetails = () => {
           </div>
         </div>
         <div className="shipping-details row g-3">
-          <h5>Shipping details</h5>
+          <h5>Shipping</h5>
           <div className="col-3">
             <div className="form-check">
               <input
@@ -122,7 +122,7 @@ const OrderDetails = () => {
         </div>
 
         <div className="payment-details row g-3">
-          <h5>Payment details</h5>
+          <h5>Payment</h5>
           <div className="col-2">
             <div className="form-check">
               <input
