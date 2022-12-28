@@ -1,9 +1,10 @@
 import React from "react";
 import image from "../../images/royal4.jpg";
+import DetailsBar from "./DetailsBar";
 
 const ProductDetails = () => {
   return (
-    <div className="product-details-container">
+    <div className="product-details-container mt-5">
       <div className="card mb-3">
         <div className="row g-0">
           <div className="col-md-4">
@@ -29,6 +30,11 @@ const ProductDetails = () => {
               <p className="card-text text-success">This product is in Stock</p>
             </div>
           </div>
+        </div>
+      </div>
+      <div className="card mt-5">
+        <div className="row g-0 p-5">
+          <DetailsBar />
         </div>
       </div>
     </div>

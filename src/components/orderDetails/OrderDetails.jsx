@@ -264,7 +264,7 @@ const OrderDetails = () => {
 
         <div className="col-12">
           <button type="submit" className="btn btn-primary">
-            Place Order / Confirm and Pay
+            Place Order / Confirm and Pay (Total)
           </button>
         </div>
       </form>
