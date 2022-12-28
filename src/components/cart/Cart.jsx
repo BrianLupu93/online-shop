@@ -5,7 +5,7 @@ import CartDetails from "./CartDetails";
 const Cart = () => {
   return (
     <div className="cart-container">
-      <div className="cart-list">
+      <div className="col-md-9 cart-list">
         <h1 className="text-center py-3">Shopping-Cart</h1>
         <ProductCart />
         <ProductCart />
@@ -13,7 +13,7 @@ const Cart = () => {
         <ProductCart />
         <ProductCart />
       </div>
-      <div className="cart-order-total">
+      <div className="col-md-3 cart-order-total">
         <CartDetails />
       </div>
     </div>
