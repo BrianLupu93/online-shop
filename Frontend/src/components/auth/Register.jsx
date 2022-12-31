@@ -11,19 +11,19 @@ const Register = () => {
         onSubmit={() => navigate("/login")}
       >
         <div className="col-md-4">
-          <label htmlFor="validationCustom01" className="form-label">
+          <label htmlFor="firstName" className="form-label">
             First name
           </label>
           <input type="text" className="form-control" />
         </div>
         <div className="col-md-4">
-          <label htmlFor="validationCustom02" className="form-label">
+          <label htmlFor="lastName" className="form-label">
             Last name
           </label>
           <input type="text" className="form-control" />
         </div>
         <div className="col-md-4">
-          <label htmlFor="validationCustomUsername" className="form-label">
+          <label htmlFor="email" className="form-label">
             E-mail
           </label>
           <div className="input-group has-validation">
@@ -31,21 +31,33 @@ const Register = () => {
           </div>
         </div>
         <div className="col-md-6">
-          <label htmlFor="validationCustom03" className="form-label">
+          <label htmlFor="str-nr" className="form-label">
             Street and Number
           </label>
           <input type="text" className="form-control" />
         </div>
         <div className="col-md-3">
-          <label htmlFor="validationCustom04" className="form-label">
+          <label htmlFor="city" className="form-label">
             City
           </label>
           <input type="text" className="form-control" />
           <div className="invalid-feedback">Please select a valid state.</div>
         </div>
         <div className="col-md-3">
-          <label htmlFor="validationCustom05" className="form-label">
+          <label htmlFor="zip" className="form-label">
             Zip
+          </label>
+          <input type="text" className="form-control" />
+        </div>
+        <div className="col-md-6">
+          <label htmlFor="password" className="form-label">
+            Password
+          </label>
+          <input type="text" className="form-control" />
+        </div>
+        <div className="col-md-6">
+          <label htmlFor="repeat-password" className="form-label">
+            Repeat Password
           </label>
           <input type="text" className="form-control" />
         </div>

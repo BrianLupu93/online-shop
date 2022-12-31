@@ -1,0 +1,13 @@
+[
+  {
+    "id": "b4fd85fc-6bea-49ca-a180-7bfe3cc27fa1",
+    "username": "brian@email.com",
+    "email": "brian@email.com",
+    "password": "$2b$10$S5bdjIOlGb2DM5QFzfTohuh0NPcTfSjyjj9.iYjrWguEp5ihLVj4C",
+    "firstName": "Brian",
+    "lastName": "Lupu",
+    "adress": "street 12 Romania",
+    "isAdmin": false,
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiYjRmZDg1ZmMtNmJlYS00OWNhLWExODAtN2JmZTNjYzI3ZmExIn0sImlhdCI6MTY3MjUwODI4NywiZXhwIjoxNjcyNTk0Njg3fQ.c7Hh1L9jjF9PdNMN0aqoqENjeSPybsh052xQzjpQg7I"
+  }
+]
