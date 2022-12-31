@@ -1,13 +1,1 @@
-[
-  {
-    "id": "b4fd85fc-6bea-49ca-a180-7bfe3cc27fa1",
-    "username": "brian@email.com",
-    "email": "brian@email.com",
-    "password": "$2b$10$S5bdjIOlGb2DM5QFzfTohuh0NPcTfSjyjj9.iYjrWguEp5ihLVj4C",
-    "firstName": "Brian",
-    "lastName": "Lupu",
-    "adress": "street 12 Romania",
-    "isAdmin": false,
-    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiYjRmZDg1ZmMtNmJlYS00OWNhLWExODAtN2JmZTNjYzI3ZmExIn0sImlhdCI6MTY3MjUwODI4NywiZXhwIjoxNjcyNTk0Njg3fQ.c7Hh1L9jjF9PdNMN0aqoqENjeSPybsh052xQzjpQg7I"
-  }
-]
+[{"id":"b4fd85fc-6bea-49ca-a180-7bfe3cc27fa1","username":"brian@email.com","email":"brian@email.com","password":"$2b$10$S5bdjIOlGb2DM5QFzfTohuh0NPcTfSjyjj9.iYjrWguEp5ihLVj4C","firstName":"Brian","lastName":"Lupu","adress":"street 12 Romania","isAdmin":false,"refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiYjRmZDg1ZmMtNmJlYS00OWNhLWExODAtN2JmZTNjYzI3ZmExIn0sImlhdCI6MTY3MjUwODI4NywiZXhwIjoxNjcyNTk0Njg3fQ.c7Hh1L9jjF9PdNMN0aqoqENjeSPybsh052xQzjpQg7I"},{"id":"49108e8e-99b7-4569-b601-cdcd08d78a99","username":"test@email.com","email":"test@email.com","password":"$2b$10$5FjjFJO7rw5Gp5uoJlzWGe/taxPkTFtQVit/LswbjdaTQTLqCFVS6","firstName":"test","lastName":"test","adress":{"streetAndNumber":"test","city":"test","zip":"123"},"isAdmin":false},{"id":"0b8d4090-e197-46b4-b82a-1699b0900bed","username":"tes2t@email.com","email":"tes2t@email.com","password":"$2b$10$l2IWNWzT/0Xr1BYTP7LVM.1FLi3s62xBZba3cm9R4Jayqqg.8LJri","firstName":"test2","lastName":"test","adress":{"streetAndNumber":"test","city":"test","zip":"123"},"isAdmin":false},{"id":"e38ed1c4-bef9-4074-a0a6-2e7c4919462c","username":"tes27t@email.com","email":"tes27t@email.com","password":"$2b$10$Xt7GpUkpMmeOeJxRYxpQMOXJDATQZ.W.TIpa7hZ54Emr4NeJLuLKW","firstName":"test2","lastName":"test","adress":{"streetAndNumber":"test","city":"test","zip":"123"},"isAdmin":false},{"id":"63991b5e-562d-4a2e-9266-dddd54b41b0d","username":"tefyjrj7t@email.com","email":"tefyjrj7t@email.com","password":"$2b$10$KttTfI4ZF0tc7BotEqdFMeoV5YBWzGM8Es/6mpwyLdfs6dUFBg91O","firstName":"test2","lastName":"test","adress":{"streetAndNumber":"test","city":"test","zip":"123"},"isAdmin":false}]
