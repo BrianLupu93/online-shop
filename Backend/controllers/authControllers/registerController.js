@@ -1,5 +1,5 @@
 const accountsDB = {
-  accounts: require("../model/accounts.json"),
+  accounts: require("../../model/accounts.json"),
   setAccounts: function (data) {
     this.accounts = data;
   },
@@ -45,7 +45,7 @@ const createNewAccount = async (req, res) => {
     // write the accounts.json file
 
     await fsPromises.writeFile(
-      path.join(__dirname, "..", "model", "accounts.json"),
+      path.join(__dirname, "..", "..", "model", "accounts.json"),
       JSON.stringify(accountsDB.accounts)
     );
 
