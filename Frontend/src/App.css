@@ -99,3 +99,7 @@ h1 {
 .error-message {
   color: red;
 }
+
+.modal {
+  padding-top: 30%;
+}

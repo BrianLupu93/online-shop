@@ -1,23 +1,32 @@
 import React from "react";
 
-const Modal = ({ display, title, body, btn1, btn2 }) => {
+const Modal = ({ display, title, body, btn1, btn2, closeFunction }) => {
   return (
     <div>
-      <div className="modal" tabIndex="-1" style={{ display: display }}>
+      <div
+        style={{ display: display }}
+        className="modal show"
+        id="exampleModal"
+        tabIndex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+        role="dialog"
+      >
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">
-              <h5 className="modal-title">{title}</h5>
+              <h1 className="modal-title fs-5" id="exampleModalLabel">
+                {title}
+              </h1>
               <button
+                onClick={closeFunction}
                 type="button"
                 className="btn-close"
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
             </div>
-            <div className="modal-body">
-              <p>{body}</p>
-            </div>
+            <div className="modal-body">{body}</div>
             <div className="modal-footer">
               <button
                 type="button"

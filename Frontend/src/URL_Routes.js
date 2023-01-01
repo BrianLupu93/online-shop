@@ -1,4 +1,4 @@
-const localhost = "http://localhost3600/";
+const localhost = "http://localhost:3600/";
 
 const url = {
   register: `${localhost}register`,

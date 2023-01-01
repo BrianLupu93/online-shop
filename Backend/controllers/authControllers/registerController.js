@@ -13,14 +13,17 @@ const { v4: uuid } = require("uuid");
 const createNewAccount = async (req, res) => {
   const { firstName, lastName, email, adress, pwd } = req.body;
   if (!firstName || !lastName || !email || !adress || !pwd)
-    return res.status(400).json("All the register fields are required!");
+    return res
+      .status(400)
+      .json({ message: "All the register fields are required!" });
   // check if email already exist
 
   const duplicate = accountsDB.accounts.find(
     (account) => account.email === email
   );
 
-  if (duplicate) return res.status(409).json("The email is already used!");
+  if (duplicate)
+    return res.status(409).json({ message: "The email is already used!" });
 
   try {
     // encript the user pwd

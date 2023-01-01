@@ -7,12 +7,8 @@ import Modal from "../../utils/Modal/Modal";
 
 const Register = () => {
   const [hideModal, setHideModal] = useState(true);
-  const [fetchMessage, setFetchMessage] = useState("");
+  const [resMessage, setResMessage] = useState({});
   const navigate = useNavigate();
-
-  useEffect(() => {
-    setHideModal(false);
-  }, [fetchMessage]);
 
   const {
     register,
@@ -35,12 +31,17 @@ const Register = () => {
     };
 
     try {
-      const response = await axios.post(url.register, postData);
-      setFetchMessage("sdfggfg");
-    } catch (err) {
-      setFetchMessage(err.message);
+      const response = await axios.post(url.register, postData).then((res) => {
+        setResMessage({ title: res.statusText, body: res.data.message });
+      });
+    } catch (res) {
+      console.log(res);
+      setResMessage({
+        title: res.response.statusText,
+        body: res.response.data.message,
+      });
     }
-    reset();
+    setHideModal(false);
   };
 
   return (
@@ -217,11 +218,12 @@ const Register = () => {
         </div>
       </form>
       <Modal
-        display={!hideModal ? "none" : "block"}
-        title={"Success"}
-        body={fetchMessage}
+        display={hideModal ? "none" : "block"}
+        title={resMessage.title}
+        body={resMessage.body}
         btn1={"Proceed to e-Shop"}
         btn2={"Proceed to Login"}
+        closeFunction={() => setHideModal(true)}
       />
     </div>
   );
