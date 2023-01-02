@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import url from "../../URL_Routes";
-import Modal from "../../utils/Modal/Modal";
+import Modal from "../../utils/modal/Modal";
 import { MdError } from "react-icons/md";
 import { BsCheckCircleFill } from "react-icons/bs";
 
@@ -21,6 +21,7 @@ const Register = () => {
     handleSubmit,
     getValues,
     watch,
+
     formState: { errors },
   } = useForm();
 
@@ -46,7 +47,6 @@ const Register = () => {
         });
       });
     } catch (res) {
-      console.log(res);
       setResMessage({
         icon: <MdError />,
         title: res.response.statusText,
@@ -244,7 +244,9 @@ const Register = () => {
             : "Retry to register"
         }
         closeFunction={() => setHideModal(true)}
-        fun1={() => navigate("/")}
+        fun1={() => {
+          navigate("/");
+        }}
         fun2={() => {
           if (resMessage.title === "Created") {
             navigate("/login");
