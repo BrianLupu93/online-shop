@@ -4,16 +4,23 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import url from "../../URL_Routes";
 import Modal from "../../utils/Modal/Modal";
+import { MdError } from "react-icons/md";
+import { BsCheckCircleFill } from "react-icons/bs";
 
 const Register = () => {
   const [hideModal, setHideModal] = useState(true);
   const [resMessage, setResMessage] = useState({});
   const navigate = useNavigate();
 
+  useEffect(() => {
+    setResMessage({});
+  }, []);
+
   const {
     register,
     handleSubmit,
-    reset,
+    getValues,
+    watch,
     formState: { errors },
   } = useForm();
 
@@ -31,12 +38,17 @@ const Register = () => {
     };
 
     try {
-      const response = await axios.post(url.register, postData).then((res) => {
-        setResMessage({ title: res.statusText, body: res.data.message });
+      await axios.post(url.register, postData).then((res) => {
+        setResMessage({
+          icon: <BsCheckCircleFill />,
+          title: res.statusText,
+          body: res.data.message,
+        });
       });
     } catch (res) {
       console.log(res);
       setResMessage({
+        icon: <MdError />,
         title: res.response.statusText,
         body: res.response.data.message,
       });
@@ -162,7 +174,7 @@ const Register = () => {
             Password
           </label>
           <input
-            type="text"
+            type="password"
             className="form-control"
             {...register("password", {
               required: {
@@ -180,7 +192,7 @@ const Register = () => {
             Confirm Password
           </label>
           <input
-            type="text"
+            type="password"
             className="form-control"
             {...register("confirmPassword", {
               required: {
@@ -189,9 +201,11 @@ const Register = () => {
               },
             })}
           />
-          {errors.confirmPassword && (
-            <p className="error-message">{errors.confirmPassword.message}</p>
-          )}
+
+          {watch("confirmPassword") !== watch("password") &&
+          getValues("confirmPassword") ? (
+            <p className="error-message">Password not match</p>
+          ) : null}
         </div>
         <div className="col-12">
           <div className="form-check">
@@ -206,7 +220,7 @@ const Register = () => {
             {errors.agreement && (
               <p className="error-message">{errors.agreement.message}</p>
             )}
-            <label className="form-check-label" htmlFor="invalidCheck">
+            <label className="form-check-label" htmlFor="agreement">
               Agree to terms and conditions
             </label>
           </div>
@@ -217,13 +231,27 @@ const Register = () => {
           </button>
         </div>
       </form>
+
       <Modal
         display={hideModal ? "none" : "block"}
+        icon={resMessage.icon}
         title={resMessage.title}
         body={resMessage.body}
-        btn1={"Proceed to e-Shop"}
-        btn2={"Proceed to Login"}
+        btn1={"Back to e-Shop"}
+        btn2={
+          resMessage.title === "Created"
+            ? "Proceed to Login"
+            : "Retry to register"
+        }
         closeFunction={() => setHideModal(true)}
+        fun1={() => navigate("/")}
+        fun2={() => {
+          if (resMessage.title === "Created") {
+            navigate("/login");
+          } else {
+            setHideModal(true);
+          }
+        }}
       />
     </div>
   );

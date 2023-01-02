@@ -1,1 +1,13 @@
-[{"id":"0c070158-8e11-4789-92b1-d2b6cc1688bc","username":"brian@email.com","email":"brian@email.com","password":"$2b$10$hkNXwvEMJAy/Mdg6a8JS3uEVlK.9TtKjVexODfsTtu4xS7v2ByQT6","firstName":"Brian","lastName":"Lupu","adress":"street 12 Romania","isAdmin":false,"refreshToken":"efergeger"},{"id":"44c594b9-066b-4cdc-ab7c-a81d6c75b56a","username":"test1@email","email":"test1@email","password":"$2b$10$QZ.juuW/GgCdppgdXM1JG.rYLeoekptY3.lnFxW/tZD/RU6.ZhAj.","firstName":"egdg","lastName":"sdfgsdf","adress":{"adress":"sdfgsdfg","city":"sfdg","zip":"sdfgsdfg"},"isAdmin":false},{"id":"ee0557fe-e6a9-471a-8ca3-77414246695f","username":"test2@email.com","email":"test2@email.com","password":"$2b$10$lnFJpOGxTJ8RVp9OMofhSeCic8QqRmEoPzp.Bb.M.Z87e88HVVv3C","firstName":"erfe","lastName":"werfwer","adress":{"adress":"gerg","city":"erger","zip":"erger"},"isAdmin":false},{"id":"ccbcad9b-4132-40d3-896f-14ad02ee5e62","username":"test@email.com","email":"test@email.com","password":"$2b$10$OK5/x3g62vNEVph3ToLO4O0t8SHB8YiiV6roAxK8mhhpxsfDyJE.i","firstName":"test","lastName":"test","adress":{"adress":"test","city":"test","zip":"test"},"isAdmin":false},{"id":"6df8f60a-20de-4050-9367-e4d6f2a2efad","username":"tykjt@email.com","email":"tykjt@email.com","password":"$2b$10$moxZSAyCqCXpSQ7olncRxOOw6NPhcjcRIXkSU5jMPQIqUSmR5MI/C","firstName":"ityty","lastName":"tyoty","adress":{"adress":"dgfg","city":"erherh","zip":"erherh"},"isAdmin":false},{"id":"d20e6b5e-9e17-4f3a-920b-13a47b0c3edc","username":"34242@email.com","email":"34242@email.com","password":"$2b$10$dGA2UN9c3/GfIsm.Z5F3JOUBuDlu4wlTomoYUqzTQceMC9s8QjMYW","firstName":"454y","lastName":"4y4y","adress":{"adress":"gerg","city":"werherh","zip":"erh"},"isAdmin":false},{"id":"de6f8a8e-8b56-419a-8fe4-99ee3f12d0d0","username":"ertwrtert@email.com","email":"ertwrtert@email.com","password":"$2b$10$.n3oOjuYG/SN/re4Rt9wsu49/JX8FBAYnxeC4qAtl7fCUIwI/Onyy","firstName":"tgerg","lastName":"erge","adress":{"adress":"fgrg","city":"ergeg","zip":"ererg"},"isAdmin":false},{"id":"af80c620-cd4b-4715-970d-b0cfea199aca","username":"er12121t@email.com","email":"er12121t@email.com","password":"$2b$10$apqPSDRPDkvHBv3AmnscV.js67E2Ihw6nawCpgmbDqcTqXe.a5e9G","firstName":"tgerg","lastName":"erge","adress":{"adress":"fgrg","city":"ergeg","zip":"ererg"},"isAdmin":false}]
+[
+  {
+    "id": "0c070158-8e11-4789-92b1-d2b6cc1688bc",
+    "username": "brian@email.com",
+    "email": "brian@email.com",
+    "password": "$2b$10$hkNXwvEMJAy/Mdg6a8JS3uEVlK.9TtKjVexODfsTtu4xS7v2ByQT6",
+    "firstName": "Brian",
+    "lastName": "Lupu",
+    "adress": "street 12 Romania",
+    "isAdmin": false,
+    "refreshToken": "efergeger"
+  }
+]

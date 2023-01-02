@@ -1,6 +1,16 @@
 import React from "react";
 
-const Modal = ({ display, title, body, btn1, btn2, closeFunction }) => {
+const Modal = ({
+  display,
+  icon,
+  title,
+  body,
+  btn1,
+  btn2,
+  closeFunction,
+  fun1,
+  fun2,
+}) => {
   return (
     <div>
       <div
@@ -16,7 +26,7 @@ const Modal = ({ display, title, body, btn1, btn2, closeFunction }) => {
           <div className="modal-content">
             <div className="modal-header">
               <h1 className="modal-title fs-5" id="exampleModalLabel">
-                {title}
+                <span>{icon}</span> {title}
               </h1>
               <button
                 onClick={closeFunction}
@@ -32,10 +42,11 @@ const Modal = ({ display, title, body, btn1, btn2, closeFunction }) => {
                 type="button"
                 className="btn btn-secondary"
                 data-bs-dismiss="modal"
+                onClick={fun1}
               >
                 {btn1}
               </button>
-              <button type="button" className="btn btn-primary">
+              <button type="button" className="btn btn-primary" onClick={fun2}>
                 {btn2}
               </button>
             </div>
