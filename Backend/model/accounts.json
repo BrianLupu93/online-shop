@@ -1,13 +1,1 @@
-[
-  {
-    "id": "0c070158-8e11-4789-92b1-d2b6cc1688bc",
-    "username": "brian@email.com",
-    "email": "brian@email.com",
-    "password": "$2b$10$hkNXwvEMJAy/Mdg6a8JS3uEVlK.9TtKjVexODfsTtu4xS7v2ByQT6",
-    "firstName": "Brian",
-    "lastName": "Lupu",
-    "adress": "street 12 Romania",
-    "isAdmin": false,
-    "refreshToken": "efergeger"
-  }
-]
+[{"id":"cb6b9cbc-4e97-45ce-98ae-222883a4165c","username":"test@email.com","email":"test@email.com","password":"$2b$10$2VaaImCt7tDMdbVVLM5p0eg0z.pZ9TXN/H/8cjhR0e4ac2uC.fCWq","firstName":"test","lastName":"test","adress":{"adress":"test","city":"test","zip":"test"},"isAdmin":false},{"id":"fb9ca41d-b23e-499b-93e6-335d8b6efe95","username":"test2@email.com","email":"test2@email.com","password":"$2b$10$CKlDCpILagD0bKlBuIRtv.RbhKHPzNjvV8ioPYuvAshE4UxxJ3tY.","firstName":"test","lastName":"test","adress":{"adress":"123","city":"123","zip":"123"},"isAdmin":false},{"id":"860a6397-e159-4dda-bd5d-02a394d0f50c","username":"alexandra@email.com","email":"alexandra@email.com","password":"$2b$10$uWHUnX.zSHyRLGxe6JJu7OjJJsk8OH4MaaHbgKpPN0jkzk/EZNoTy","firstName":"alexandra","lastName":"lupu","adress":{"adress":"test","city":"test","zip":"123"},"isAdmin":false},{"id":"0c070158-8e11-4789-92b1-d2b6cc1688bc","username":"brian@email.com","email":"brian@email.com","password":"$2b$10$hkNXwvEMJAy/Mdg6a8JS3uEVlK.9TtKjVexODfsTtu4xS7v2ByQT6","firstName":"Brian","lastName":"Lupu","adress":"street 12 Romania","isAdmin":true,"refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiMGMwNzAxNTgtOGUxMS00Nzg5LTkyYjEtZDJiNmNjMTY4OGJjIn0sImlhdCI6MTY3MjY3MDEyMywiZXhwIjoxNjcyNzU2NTIzfQ.KqbweL3zkZlWS9ov0Foi6lRza2-J5yO81K0PH4_M5Bc"}]

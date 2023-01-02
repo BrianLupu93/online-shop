@@ -11,10 +11,7 @@ app.use(express.json());
 // middleware for cookie
 app.use(cookieParser());
 
-app.use("/register", require("./routes/auth/register"));
-app.use("/login", require("./routes/auth/login"));
-app.use("/refresh", require("./routes/auth/refresh"));
-app.use("/logout", require("./routes/auth/logout"));
+app.use("/routes", require("./routes/authRouter"));
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
