@@ -8,7 +8,6 @@ export const getAccountDetails = createAsyncThunk(
   async (id, { rejectWithValue }) => {
     try {
       const response = await axios.get(`${url.getAccountDetails}/${id}`);
-      console.log(response.data);
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response.data);

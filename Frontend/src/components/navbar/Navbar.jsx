@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
+  const cartTotalNr = useSelector((state) => state.cart.length);
   const userName = useSelector(
     (state) => `${state.account.firstName} ${state.account.lastName}`
   );
@@ -83,7 +84,8 @@ const Navbar = () => {
                   aria-current="page"
                   to="/cart"
                 >
-                  Shopping Cart<span className="cart-items-bubble">10</span>
+                  Shopping Cart
+                  <span className="cart-items-bubble">{cartTotalNr}</span>
                 </Link>
               </li>
             </ul>
