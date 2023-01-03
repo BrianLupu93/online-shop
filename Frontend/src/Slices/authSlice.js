@@ -7,7 +7,6 @@ export const fetchLogin = createAsyncThunk(
   async (data, { rejectWithValue }) => {
     try {
       const response = await axios.post(url.login, data);
-      console.log(response);
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response.data);
@@ -16,7 +15,7 @@ export const fetchLogin = createAsyncThunk(
 );
 
 const authSlice = createSlice({
-  name: "account",
+  name: "auth",
   initialState: {},
   reducers: {},
   extraReducers: (builder) => {
@@ -25,22 +24,22 @@ const authSlice = createSlice({
         state.fetching = true;
         state.userId = "";
         state.token = "";
+        state.isLoggedIn = false;
       })
       .addCase(fetchLogin.fulfilled, (state, action) => {
         state.fetching = false;
-        console.log(action.payload);
         state.userId = action.payload.userId;
         state.token = action.payload.token;
         state.error = "";
         state.message = action.payload.message;
+        state.isLoggedIn = true;
       })
       .addCase(fetchLogin.rejected, (state, action) => {
         state.fetching = false;
         state.error = action.payload.message;
+        state.isLoggedIn = false;
       });
   },
 });
 
 export default authSlice.reducer;
-
-export const {} = authSlice.actions;

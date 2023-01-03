@@ -1,16 +1,21 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { fetchLogin } from "../../Slices/authSlice";
 import { useDispatch, useSelector } from "react-redux";
+
 import Spin from "../../utils/spinner/Spin";
 
 const Login = () => {
   const fetching = useSelector((state) => state.auth.fetching);
-  const successMsg = useSelector((state) => state.auth.message);
-  const errorMsg = useSelector((state) => state.auth.error);
-
+  const userId = useSelector((state) => state.auth.userId);
+  const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (userId) navigate("/");
+  }, [userId]);
+
   const {
     register,
     handleSubmit,

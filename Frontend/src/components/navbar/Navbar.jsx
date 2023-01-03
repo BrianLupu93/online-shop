@@ -1,7 +1,12 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
+  const userName = useSelector(
+    (state) => `${state.account.firstName} ${state.account.lastName}`
+  );
+
   return (
     <div className="navbar-container">
       <nav className="navbar navbar-expand-lg bg-body-tertiary px-5 fixed-top opacity-75 ">
@@ -44,7 +49,9 @@ const Navbar = () => {
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  My Account
+                  {userName === "undefined undefined"
+                    ? "Hello Guest"
+                    : `Hello ${userName}`}
                 </a>
                 <ul className="dropdown-menu ">
                   <li>

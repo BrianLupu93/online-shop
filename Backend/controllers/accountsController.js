@@ -19,7 +19,7 @@ const getAccountDetails = async (req, res) => {
       .status(401)
       .json({ message: `The account with id ${id} was not found` });
 
-  res.status(200).json(foundAccount);
+  res.status(201).json(foundAccount);
 };
 
 module.exports = { getAccountDetails };
