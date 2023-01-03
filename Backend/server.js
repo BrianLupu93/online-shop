@@ -12,6 +12,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use("/routes", require("./routes/authRouter"));
+app.use("/routes/api", require("./routes/api/accounts"));
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
