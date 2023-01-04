@@ -1,6 +1,8 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useSelector } from "react-redux";
+import { addNewProduct } from "../../Slices/productsSlice";
+import { useDispatch } from "react-redux";
 
 const AddNewProduct = () => {
   const sampleState = useSelector((state) => state.products.sample);
@@ -13,6 +15,8 @@ const AddNewProduct = () => {
     () => sampleState[selectedCategory]
   );
 
+  const dispatch = useDispatch();
+
   useEffect(() => {
     reset();
     setSubCategory(sampleState[selectedCategory]);
@@ -24,10 +28,11 @@ const AddNewProduct = () => {
     setValue,
     reset,
     formState: { errors },
-  } = useForm();
+  } = useForm({ mode: "all" });
 
   const onSubmit = (data) => {
     console.log(data);
+    dispatch(addNewProduct(data));
     reset();
   };
 
@@ -153,6 +158,24 @@ const AddNewProduct = () => {
             </div>
           </div>
         </div>
+
+        {/* <div className="col-md-12 mb-3 d-flex">
+          <div className="col-md-3">
+            <div className="form-group">
+              <div className="custom-file">
+                <input
+                  type="file"
+                  multiple
+                  className="custom-file-input"
+                  {...register("file")}
+                />
+                <label className="custom-file-label" htmlFor="customFile">
+                  Product Image
+                </label>
+              </div>
+            </div>
+          </div>
+        </div> */}
 
         <button type="submit" className="btn btn-primary mb-2">
           Add Product

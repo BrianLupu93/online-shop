@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { fetchLogin } from "../../Slices/authSlice";
 import { useDispatch, useSelector } from "react-redux";
 
-import Spin from "../../utils/spinner/Spin";
+import Spinner from "../../utils/spinner/Spinner";
 
 const Login = () => {
   const fetching = useSelector((state) => state.auth.fetching);
@@ -78,7 +78,7 @@ const Login = () => {
           Submit
         </button>
       </form>
-      <Spin
+      <Spinner
         display={fetching === "undefined" || !fetching ? "none" : "block"}
         message={"Login..."}
       />

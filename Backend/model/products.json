@@ -1,18 +1,1 @@
-[
-  {
-    "price": "33",
-    "category": "GLASSES",
-    "type": "test",
-    "color": "red",
-    "frame": "round",
-    "id": "c028da39-454a-40de-b877-09e6497afa28"
-  },
-  {
-    "price": "33",
-    "category": "SUNGLASSES",
-    "type": "test",
-    "color": "--",
-    "frame": "round",
-    "id": "e83d2b9b-a84a-4193-87d6-bfbdac1a7d86"
-  }
-]
+[{"category":"SUNGLASSES","lensType":"polarized","gender":"male","frameForm":"pilot","brand":"ray-Ban","model":"RR45","size":"50","color":"black","price":"125","Lens Type":"polarized","id":"537661d0-9965-4a5e-9a15-8208115c4ee1"},{"category":"GLASSES","frameType":"completeFrame","gender":"male","frameForm":"pilot","brand":"pOLICE","model":"POL22","size":"48","color":"white","price":"189","Brand":"pOLICE","Frame Type":"completeFrame","id":"ee33cf29-f307-4e50-8e7c-9e20e82d78ff"},{"category":"LENS","lensType":"indoor","brand":"hoya","price":"25","id":"0f464dbb-8efb-4b90-8fb5-5bc32068a733"},{"category":"LENS","lensType":"progresive","brand":"zeiss","price":"55","Brand":"zeiss","Lens Type":"progresive","id":"1662000f-c2dc-4a98-8d04-b0c46758bbb3"},{"category":"LENS","lensType":"monofocal","brand":"zeiss","price":"24","Brand":"zeiss","Lens Type":"monofocal","id":"e11f7773-99b1-4183-82bd-df22b5898ba6"},{"category":"LENS","lensType":"indoor","brand":"nikon","price":"32","Brand":"nikon","id":"21913fbb-da41-4f8b-8893-bad9c839da59"},{"category":"LENS","lensType":"indoor","brand":"varilux","price":"55","Brand":"varilux","id":"3b2eeffd-1bf2-402b-9971-60750bee02f1"},{"category":"SUNGLASSES","lensType":"miorror","gender":"male","frameForm":"pilot","brand":"ray-Ban","price":"34","id":"99362d04-e584-4d91-b1cf-c9d5154a340e"}]

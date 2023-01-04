@@ -6,6 +6,8 @@ const url = {
   logout: `${localhost}/logout`,
   refresh: `${localhost}/refresh`,
   getAccountDetails: `${localhost}/api/accounts`,
+  addNewProduct: `${localhost}/api/add-new-product`,
+  getProducts: `${localhost}/api/get-products`,
 };
 
 export default url;
