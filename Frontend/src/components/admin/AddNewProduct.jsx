@@ -3,19 +3,20 @@ import { useForm } from "react-hook-form";
 import { useSelector } from "react-redux";
 
 const AddNewProduct = () => {
-  const [category, setCategory] = useState(() => "SUNGLASSES");
-  const [subCategory, setSubCategory] = useState(null);
+  const sampleState = useSelector((state) => state.products.sample);
 
-  const sample = useSelector((state) => state.products.sample);
-  const categories = Object.keys(sample);
+  const [selectedCategory, setSelectedCategory] = useState(
+    () => Object.keys(sampleState)[0]
+  );
+
+  const [subCategory, setSubCategory] = useState(
+    () => sampleState[selectedCategory]
+  );
 
   useEffect(() => {
-    setSubCategory(Object.keys(sample[category]));
-  }, []);
-
-  useEffect(() => {
-    setSubCategory(Object.keys(sample[category]));
-  }, [category]);
+    reset();
+    setSubCategory(sampleState[selectedCategory]);
+  }, [selectedCategory]);
 
   const {
     register,
@@ -27,9 +28,15 @@ const AddNewProduct = () => {
 
   const onSubmit = (data) => {
     console.log(data);
+    reset();
   };
-  console.log(category);
-  console.log(subCategory);
+
+  function camelize(str) {
+    return str.replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, function (match, index) {
+      if (+match === 0) return ""; // or if (/\s+/.test(match)) for white spaces
+      return index === 0 ? match.toLowerCase() : match.toUpperCase();
+    });
+  }
 
   return (
     <div className="new-product-form">
@@ -39,13 +46,12 @@ const AddNewProduct = () => {
           <div className="form-group">
             <label htmlFor="category">Category</label>
             <select
+              value={selectedCategory}
               className="form-control"
-              onChange={(e) => {
-                setCategory(e.target.value);
-              }}
               {...register("category")}
+              onChange={(e) => setSelectedCategory(e.target.value)}
             >
-              {categories?.map((cat, i) => (
+              {Object.keys(sampleState)?.map((cat, i) => (
                 <option value={cat} key={i}>
                   {cat}
                 </option>
@@ -54,18 +60,18 @@ const AddNewProduct = () => {
           </div>
         </div>
 
-        {subCategory?.map((subCat, i) => {
+        {Object.keys(subCategory)?.map((subCat, i) => {
           return (
             <div className="col-md-12 mb-3" key={i}>
               <div className="form-group">
                 <label htmlFor="category">{subCat}</label>
                 <select
                   className="form-control"
-                  {...register(subCat)}
+                  {...register(camelize(subCat))}
                   onChange={(e) => setValue(subCat, e.target.value)}
                 >
-                  {sample[category][subCat].map((element, i) => (
-                    <option value={element} key={i}>
+                  {sampleState[selectedCategory][subCat]?.map((element, i) => (
+                    <option value={camelize(element)} key={i}>
                       {element}
                     </option>
                   ))}
@@ -134,8 +140,16 @@ const AddNewProduct = () => {
                 type="text"
                 className="form-control"
                 placeholder="price"
-                {...register("price")}
+                {...register("price", {
+                  required: {
+                    value: true,
+                    message: "The price is Required",
+                  },
+                })}
               />
+              {errors.price && (
+                <p className="error-message">{errors.price.message}</p>
+              )}
             </div>
           </div>
         </div>
