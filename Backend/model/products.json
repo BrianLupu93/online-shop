@@ -1,1 +1,18 @@
-{}
+[
+  {
+    "price": "33",
+    "category": "GLASSES",
+    "type": "test",
+    "color": "red",
+    "frame": "round",
+    "id": "c028da39-454a-40de-b877-09e6497afa28"
+  },
+  {
+    "price": "33",
+    "category": "SUNGLASSES",
+    "type": "test",
+    "color": "--",
+    "frame": "round",
+    "id": "e83d2b9b-a84a-4193-87d6-bfbdac1a7d86"
+  }
+]

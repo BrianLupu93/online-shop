@@ -13,6 +13,7 @@ app.use(cookieParser());
 
 app.use("/routes", require("./routes/authRouter"));
 app.use("/routes/api", require("./routes/api/accounts"));
+app.use("/routes/api", require("./routes/api/products"));
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
