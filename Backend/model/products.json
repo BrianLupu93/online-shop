@@ -10,7 +10,9 @@
     "price": "125",
     "order": false,
     "stock": "27",
-    "id": "a1053a9d-d189-420a-890a-28d91ec7a216"
+    "id": "a1053a9d-d189-420a-890a-28d91ec7a216",
+    "reviews": 21,
+    "stars": [0, 1, 2, 3]
   },
   {
     "category": "SUNGLASSES",
@@ -23,7 +25,9 @@
     "price": "322",
     "order": false,
     "stock": "12",
-    "id": "baca2d6d-5676-4396-9f6b-969c1db1e5aa"
+    "id": "baca2d6d-5676-4396-9f6b-969c1db1e5aa",
+    "reviews": 11,
+    "stars": [0, 1, 2, 3, 4]
   },
   {
     "category": "SUNGLASSES",
@@ -35,7 +39,9 @@
     "color": "red",
     "price": "234",
     "order": true,
-    "id": "92f30ce9-da83-4b39-96be-0348868e54c9"
+    "id": "92f30ce9-da83-4b39-96be-0348868e54c9",
+    "reviews": 21,
+    "stars": [0, 1, 2]
   },
   {
     "category": "GLASSES",
@@ -47,7 +53,9 @@
     "color": "gold",
     "price": "270",
     "order": true,
-    "id": "3a7c084d-e752-4a6e-ad71-814ce083a24d"
+    "id": "3a7c084d-e752-4a6e-ad71-814ce083a24d",
+    "reviews": 5,
+    "stars": [0, 1, 2, 3, 4]
   },
   {
     "category": "GLASSES",
@@ -60,7 +68,8 @@
     "price": "247",
     "order": false,
     "stock": "11",
-    "id": "12c9c757-1c9b-4eca-80d4-09c48866bfb1"
+    "reviews": 7,
+    "stars": [0, 1, 2]
   },
   {
     "category": "GLASSES",
@@ -72,7 +81,9 @@
     "color": "silver",
     "price": "347",
     "order": true,
-    "id": "5024d523-d8cf-42b5-a23f-6ef28f223604"
+    "id": "5024d523-d8cf-42b5-a23f-6ef28f223604",
+    "reviews": 9,
+    "stars": [0, 1, 2, 3, 4]
   },
   {
     "category": "GLASSES",
@@ -85,7 +96,9 @@
     "price": "246",
     "order": false,
     "stock": "2",
-    "id": "e1963b48-9589-45d0-ba36-cbb845450dd6"
+    "id": "e1963b48-9589-45d0-ba36-cbb845450dd6",
+    "reviews": 21,
+    "stars": [0, 1, 2, 3]
   },
   {
     "category": "LENS",
@@ -94,7 +107,9 @@
     "price": "24",
     "order": false,
     "stock": "22",
-    "id": "efe85752-6df5-4ebf-81be-18eb1d3e45c7"
+    "id": "efe85752-6df5-4ebf-81be-18eb1d3e45c7",
+    "reviews": 2,
+    "stars": [0, 1, 2, 3, 4]
   },
   {
     "category": "LENS",
@@ -102,7 +117,9 @@
     "brand": "polarized",
     "price": "25",
     "order": true,
-    "id": "1ebd05af-da1e-43e8-9567-a2f1ba83877e"
+    "id": "1ebd05af-da1e-43e8-9567-a2f1ba83877e",
+    "reviews": 32,
+    "stars": [0, 1, 2, 3]
   },
   {
     "category": "LENS",
@@ -110,7 +127,9 @@
     "brand": "nikon",
     "price": "56",
     "order": true,
-    "id": "ad76b2d6-96d3-49b0-a75c-b818dfb616de"
+    "id": "ad76b2d6-96d3-49b0-a75c-b818dfb616de",
+    "reviews": 24,
+    "stars": [0, 1, 2, 3, 4]
   },
   {
     "category": "LENS",
@@ -118,7 +137,9 @@
     "brand": "zeiss",
     "price": "34",
     "order": true,
-    "id": "720dfc8b-6ee3-422b-933e-7fb450c4f0a0"
+    "id": "720dfc8b-6ee3-422b-933e-7fb450c4f0a0",
+    "reviews": 11,
+    "stars": [0, 1, 2, 3]
   },
   {
     "category": "LENS",
@@ -127,7 +148,9 @@
     "price": "23",
     "order": false,
     "stock": "14",
-    "id": "8100e7c2-c56b-459a-8d3d-07473dafafc0"
+    "id": "8100e7c2-c56b-459a-8d3d-07473dafafc0",
+    "reviews": 4,
+    "stars": [0, 1, 2]
   },
   {
     "category": "LENS",
@@ -136,6 +159,19 @@
     "price": "12",
     "order": false,
     "stock": "22",
-    "id": "6d7cde78-4bb9-4e75-a1f0-1bc57941b185"
+    "id": "6d7cde78-4bb9-4e75-a1f0-1bc57941b185",
+    "reviews": 10,
+    "stars": [0, 1, 2, 3]
+  },
+  {
+    "category": "LENS",
+    "lensType": "monofocal",
+    "brand": "nikon",
+    "price": "34",
+    "order": false,
+    "stock": "12",
+    "id": "1ab79d24-8123-4b57-aa8d-d3d4e16308a6",
+    "reviews": 1,
+    "stars": [0, 1, 2, 3, 4]
   }
 ]
