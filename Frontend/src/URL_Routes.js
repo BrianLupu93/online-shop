@@ -8,6 +8,7 @@ const url = {
   getAccountDetails: `${localhost}/api/accounts`,
   addNewProduct: `${localhost}/api/add-new-product`,
   getProducts: `${localhost}/api/get-products`,
+  addToCart: `${localhost}/api/add-to-cart`,
 };
 
 export default url;

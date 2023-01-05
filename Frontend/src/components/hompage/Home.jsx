@@ -42,6 +42,9 @@ const Home = () => {
               price={product.price}
               category={product.category}
               disponibility={product.order ? "order Now" : "in Stock"}
+              id={product.id}
+              reviews={product.reviews}
+              stars={product.stars}
             />
           );
         })}

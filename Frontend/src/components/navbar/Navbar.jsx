@@ -3,18 +3,18 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const cartTotalNr = useSelector((state) => state.cart.length);
+  const cartTotalNr = useSelector((state) => state.cart.cartItems.length);
   const userName = useSelector(
     (state) => `${state.account.firstName} ${state.account.lastName}`
   );
 
   return (
-    <div className="navbar-container">
-      <nav className="navbar navbar-expand-lg bg-body-tertiary px-5 fixed-top opacity-75 ">
-        <div className="container-fluid px-3">
-          <a className="navbar-brand px-5" href="/">
+    <div className="navbar-container ">
+      <nav className=" navbar navbar-expand-lg bg-body-tertiary px-5  fixed-top opacity-75 ">
+        <div className="container-fluid px-5">
+          <Link className="navbar-brand " to="/">
             e-SHOP
-          </a>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -41,7 +41,7 @@ const Navbar = () => {
                 Search
               </button>
             </form>
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0 px-5">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0 px-5 mx-auto">
               <li className="nav-item dropdown mx-4">
                 <a
                   className="nav-link dropdown-toggle"
@@ -84,8 +84,17 @@ const Navbar = () => {
                   aria-current="page"
                   to="/cart"
                 >
-                  Shopping Cart
-                  <span className="cart-items-bubble">{cartTotalNr}</span>
+                  Cart
+                  <span>
+                    {" "}
+                    ({cartTotalNr}{" "}
+                    {cartTotalNr === 1
+                      ? "items"
+                      : cartTotalNr === 1
+                      ? "item"
+                      : "items"}
+                    )
+                  </span>
                 </Link>
               </li>
             </ul>

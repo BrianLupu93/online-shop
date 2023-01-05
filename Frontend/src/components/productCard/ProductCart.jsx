@@ -1,28 +1,38 @@
 import React from "react";
-import image from "../../images/lens.jpg";
+import sunglasses from "../../images/sunglasses.jpeg";
+import eyeglasses from "../../images/eyeglasses.jpg";
+import lens from "../../images/lens.jpg";
 
-const ProductCart = () => {
+const ProductCart = ({ id, title, body, category, price, reviews, stars }) => {
   return (
-    <div className="product-cart-container">
+    <div className="product-cart-container" id={id}>
       <div className="card mb-3">
         <div className="row g-0 ">
           <div className="col-md-2 d-flex align-items-center">
             <img
-              src={image}
+              src={
+                category === "SUNGLASSES"
+                  ? sunglasses
+                  : category === "GLASSES"
+                  ? eyeglasses
+                  : lens
+              }
               className="img-fluid rounded-start cart-img"
               alt="..."
             />
           </div>
           <div className="col-md-10">
             <div className="card-body cart-body">
-              <h3 className="card-title">Card title</h3>
-              <p>⭐⭐⭐⭐⭐</p>
-              <p className="card-text">
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
+              <h3 className="card-title">{title}</h3>
+              <p className="mx-2">
+                {stars?.map((star) => (
+                  <span>⭐</span>
+                ))}
               </p>
-              <h4>32,45$</h4>
+
+              <small> {reviews} reviews</small>
+              <p className="card-text">{body}</p>
+              <h4>{price}$</h4>
               <div className="details-buttons-cart">
                 <a href="/" className="btn btn-primary details-btn">
                   Add to Cart
