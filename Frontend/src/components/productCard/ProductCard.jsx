@@ -1,12 +1,29 @@
 import React from "react";
-import image from "../../images/royal4.jpg";
+import sunglasses from "../../images/sunglasses.jpeg";
+import eyeglasses from "../../images/eyeglasses.jpg";
+import lens from "../../images/lens.jpg";
 import { Link } from "react-router-dom";
 
-const ProductCard = ({ title, body, price, category }) => {
+const ProductCard = ({ title, body, price, category, disponibility }) => {
   return (
     <div className="product-card-container m-3">
       <div className="card" style={{ width: "18rem" }}>
-        <img src={image} className="card-img-top" alt="..." />
+        {disponibility === "order Now" ? (
+          <small className="mx-2 my-2 text-danger">{disponibility}</small>
+        ) : (
+          <small className="mx-2 my-2 text-success">{disponibility}</small>
+        )}
+        <img
+          src={
+            category === "SUNGLASSES"
+              ? sunglasses
+              : category === "GLASSES"
+              ? eyeglasses
+              : lens
+          }
+          className="card-img-top"
+          alt="..."
+        />
         <div className="card-body">
           <Link
             to="/product-details"
@@ -16,9 +33,9 @@ const ProductCard = ({ title, body, price, category }) => {
           </Link>
           <p className="card-text">{body}</p>
           <p className="card-text">{price}$</p>
-          <small>{category}</small>
+
           <a href="/" className="btn btn-primary">
-            Add to Cart / Edit
+            Add to Cart
           </a>
         </div>
       </div>

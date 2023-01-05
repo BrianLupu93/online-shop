@@ -1,5 +1,5 @@
 import React from "react";
-import image from "../../images/royal4.jpg";
+import image from "../../images/lens.jpg";
 import DetailsBar from "./DetailsBar";
 
 const ProductDetails = () => {

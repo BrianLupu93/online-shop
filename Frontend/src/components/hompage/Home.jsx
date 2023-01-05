@@ -1,4 +1,3 @@
-import Carousel from "../carousel/Carousel";
 import React, { useEffect } from "react";
 import Navbar from "../navbar/Navbar";
 import ProductCard from "../productCard/ProductCard";
@@ -27,7 +26,6 @@ const Home = () => {
   return (
     <div className="home-container">
       <Navbar />
-      <Carousel />
       <Spinner
         display={fetching === "undefined" || !fetching ? "none" : "block"}
         message={"Products..."}
@@ -38,11 +36,12 @@ const Home = () => {
             <ProductCard
               key={product.id}
               title={product.brand}
-              body={`${product.brand} -- ${
-                product.type ? product.type : product.lensType
+              body={`${product.model ? product.model : product.category} -- ${
+                product.lensType ? product.lensType : product.frameType
               }`}
               price={product.price}
               category={product.category}
+              disponibility={product.order ? "order Now" : "in Stock"}
             />
           );
         })}

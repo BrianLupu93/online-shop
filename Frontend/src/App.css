@@ -106,3 +106,7 @@ h1 {
 .new-product-form {
   padding: 10%;
 }
+
+.products-list {
+  margin-top: 10rem;
+}

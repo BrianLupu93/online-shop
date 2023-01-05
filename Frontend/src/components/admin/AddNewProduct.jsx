@@ -15,6 +15,8 @@ const AddNewProduct = () => {
     () => sampleState[selectedCategory]
   );
 
+  const [order, setOrder] = useState(() => false);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -32,7 +34,9 @@ const AddNewProduct = () => {
 
   const onSubmit = (data) => {
     console.log(data);
+
     dispatch(addNewProduct(data));
+    setOrder(false);
     reset();
   };
 
@@ -42,7 +46,7 @@ const AddNewProduct = () => {
       return index === 0 ? match.toLowerCase() : match.toUpperCase();
     });
   }
-
+  console.log(order);
   return (
     <div className="new-product-form">
       <h1>Add a new Product</h1>
@@ -73,7 +77,7 @@ const AddNewProduct = () => {
                 <select
                   className="form-control"
                   {...register(camelize(subCat))}
-                  onChange={(e) => setValue(subCat, e.target.value)}
+                  onChange={(e) => setValue(camelize(subCat), e.target.value)}
                 >
                   {sampleState[selectedCategory][subCat]?.map((element, i) => (
                     <option value={camelize(element)} key={i}>
@@ -158,7 +162,47 @@ const AddNewProduct = () => {
             </div>
           </div>
         </div>
+        <div className="col-md-12 mb-3 d-flex">
+          <div className="col-md-6 d-flex align-items-center">
+            <div className="form-check form-switch">
+              <input
+                onClick={() => setOrder(!order)}
+                className="form-check-input only-order"
+                type="checkbox"
+                id="flexSwitchCheckDefault"
+                {...register("order")}
+              />
+              <label
+                className="form-check-label"
+                htmlFor="flexSwitchCheckDefault"
+              >
+                Only Order
+              </label>
+            </div>
+          </div>
 
+          {!order && (
+            <div className="col-md-6">
+              <div className="form-group">
+                <label htmlFor="price">Stock</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="stock"
+                  {...register("stock", {
+                    required: {
+                      value: true,
+                      message: "The stock is Required",
+                    },
+                  })}
+                />
+                {errors.stock && (
+                  <p className="error-message">{errors.stock.message}</p>
+                )}
+              </div>
+            </div>
+          )}
+        </div>
         {/* <div className="col-md-12 mb-3 d-flex">
           <div className="col-md-3">
             <div className="form-group">
