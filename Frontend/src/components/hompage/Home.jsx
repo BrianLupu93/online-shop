@@ -31,14 +31,14 @@ const Home = () => {
         message={"Products..."}
       />
       <div className="products-list">
-        {allProducts?.map((product) => {
+        {allProducts?.map((product, i) => {
           return (
             <ProductCard
-              key={product.id}
+              key={i}
               title={product.brand}
-              body={`${product.model ? product.model : product.category} -- ${
-                product.lensType ? product.lensType : product.frameType
-              }`}
+              body={`-- ${
+                product.model ? product.model : product.category
+              } -- ${product.lensType ? product.lensType : product.frameType}`}
               price={product.price}
               category={product.category}
               disponibility={product.order ? "order Now" : "in Stock"}

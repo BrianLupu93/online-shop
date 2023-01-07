@@ -51,8 +51,8 @@ const ProductCard = ({
           </Link>
           <div className="rating-element d-flex justify-content-center ">
             <p className="mx-2">
-              {stars?.map((star) => (
-                <span>⭐</span>
+              {stars?.map((star, i) => (
+                <span key={i}>⭐</span>
               ))}
             </p>
 

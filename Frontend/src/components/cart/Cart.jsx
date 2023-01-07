@@ -22,10 +22,16 @@ const Cart = () => {
           return (
             <ProductCart
               key={i}
-              title={item.brand}
-              body={`${item.model ? item.model : item.category} -- ${
+              title={`-- ${item.category} -- ${item.brand.toUpperCase()}`}
+              body={`${item.brand.toUpperCase()}: ${
                 item.lensType ? item.lensType : item.frameType
-              }`}
+              } ${item.model ? `MODEL:  ${item.model}` : ""}`}
+              description={`
+              ${item.color ? `Color: ${item.color.toUpperCase()}` : ""} 
+                ${item.gender ? `Gender: ${item.gender}` : ""}
+                ${item.frameForm ? `Form: ${item.frameForm}` : ""}
+                ${item.size ? `Size: ${item.size}` : ""}
+              `}
               price={item.price}
               category={item.category}
               disponibility={item.order ? "order Now" : "in Stock"}

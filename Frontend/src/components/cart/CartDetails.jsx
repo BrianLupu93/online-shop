@@ -1,7 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const CartDetails = () => {
+  const cartItems = useSelector((state) => state.cart.cartItems);
+
   return (
     <div>
       <div className="card text-center">
@@ -10,7 +13,9 @@ const CartDetails = () => {
         </div>
         <div className="card-body">
           <h5 className="card-title">Total</h5>
-          <p className="card-text">Your cart contain (4 items)</p>
+          <p className="card-text">{`Your cart contain (${cartItems.length} ${
+            cartItems.length === 1 ? "item" : "items"
+          })`}</p>
           <p className="card-text">
             <strong>Subtotal </strong>price 278,99$
           </p>
