@@ -20,7 +20,15 @@ const cartSlice = createSlice({
   initialState: {
     cartItems: [],
   },
-  reducers: {},
+  reducers: {
+    removeFromCart: (state, action) => {
+      const updateCart = state.cartItems?.filter(
+        (item) => item.id !== action.payload
+      );
+
+      state.cartItems = updateCart;
+    },
+  },
   extraReducers: (bulider) => {
     bulider
       .addCase(addToCart.pending, (state) => {
@@ -38,3 +46,5 @@ const cartSlice = createSlice({
 });
 
 export default cartSlice.reducer;
+
+export const { removeFromCart } = cartSlice.actions;
