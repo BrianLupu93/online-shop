@@ -21,7 +21,7 @@ export const fetchLogout = createAsyncThunk("auth/fetchLogout", async () => {
 
 const authSlice = createSlice({
   name: "auth",
-  initialState: {},
+  initialState: { isLoggedIn: false, isAdmin: false },
   reducers: {},
   extraReducers: (builder) => {
     builder
@@ -38,6 +38,7 @@ const authSlice = createSlice({
         state.error = "";
         state.message = action.payload.message;
         state.isLoggedIn = true;
+        state.isAdmin = action.payload.isAdmin;
       })
       .addCase(fetchLogin.rejected, (state, action) => {
         state.fetching = false;

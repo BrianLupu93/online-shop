@@ -23,6 +23,17 @@ export const getProducts = createAsyncThunk(
     return response.data;
   }
 );
+export const getProduct = createAsyncThunk(
+  "products/getProduct",
+  async (id, { rejectWithValue }) => {
+    try {
+      const response = await axios.get(`${url.getProduct}/${id}`);
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error);
+    }
+  }
+);
 
 const productsSlice = createSlice({
   name: "products",
@@ -50,6 +61,18 @@ const productsSlice = createSlice({
         state.message = action.payload.message;
       })
       .addCase(getProducts.rejected, (state, action) => {
+        state.fetching = false;
+        state.error = action.payload;
+      })
+      .addCase(getProduct.pending, (state) => {
+        state.fetching = true;
+      })
+      .addCase(getProduct.fulfilled, (state, action) => {
+        state.fetching = false;
+        state.editProduct = action.payload;
+        state.message = action.payload.message;
+      })
+      .addCase(getProduct.rejected, (state, action) => {
         state.fetching = false;
         state.error = action.payload;
       });

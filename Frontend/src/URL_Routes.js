@@ -8,6 +8,7 @@ const url = {
   getAccountDetails: `${localhost}/api/accounts`,
   addNewProduct: `${localhost}/api/add-new-product`,
   getProducts: `${localhost}/api/get-products`,
+  getProduct: `${localhost}/api/get-product`,
   addToCart: `${localhost}/api/add-to-cart`,
 };
 

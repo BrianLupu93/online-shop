@@ -14,6 +14,7 @@ const Home = () => {
   const userId = useSelector((state) => state.auth.userId);
   const fetching = useSelector((state) => state.products.fetching);
   const allProducts = useSelector((state) => state.products.allProducts);
+  const isAdmin = useSelector((state) => state.auth.isAdmin);
 
   useEffect(() => {
     dispatch(getProducts());
@@ -46,6 +47,7 @@ const Home = () => {
               id={product.id}
               reviews={product.reviews}
               stars={product.stars}
+              isAdmin={isAdmin}
             />
           );
         })}

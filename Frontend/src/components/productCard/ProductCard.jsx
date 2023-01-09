@@ -2,9 +2,10 @@ import React from "react";
 import sunglasses from "../../images/sunglasses.jpeg";
 import eyeglasses from "../../images/eyeglasses.jpg";
 import lens from "../../images/lens.jpg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../Slices/cartSlice";
+import { getProduct } from "../../Slices/productsSlice";
 
 const ProductCard = ({
   title,
@@ -15,12 +16,19 @@ const ProductCard = ({
   id,
   reviews,
   stars,
+  isAdmin,
 }) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleAddToCart = (e) => {
     e.preventDefault();
     dispatch(addToCart(id));
+  };
+
+  const handleProductDetils = (id) => {
+    dispatch(getProduct(id));
+    navigate("/product-details");
   };
 
   return (
@@ -43,12 +51,18 @@ const ProductCard = ({
           alt="..."
         />
         <div className="card-body">
-          <Link
-            to="/product-details"
-            className="text-body text-decoration-none"
-          >
+          {isAdmin ? (
             <h5 className="card-title text-center">{title.toUpperCase()}</h5>
-          </Link>
+          ) : (
+            <Link
+              to="/product-details"
+              state={{ id: id, handleAddToCart: handleAddToCart }}
+              className="text-body text-decoration-none"
+            >
+              <h5 className="card-title text-center">{title.toUpperCase()}</h5>
+            </Link>
+          )}
+
           <div className="rating-element d-flex justify-content-center ">
             <p className="mx-2">
               {stars?.map((star, i) => (
@@ -61,13 +75,19 @@ const ProductCard = ({
           <p className="card-text">{body.toUpperCase()}</p>
           <p className="card-text">{price}$</p>
 
-          <a
-            href="/"
-            className="btn btn-primary"
-            onClick={(e) => handleAddToCart(e)}
-          >
-            Add to Cart
-          </a>
+          {isAdmin ? (
+            <button className="btn btn-primary" onClick={(e) => navigate("/")}>
+              Edit product
+            </button>
+          ) : (
+            <Link
+              href="/"
+              className="btn btn-primary"
+              onClick={(e) => handleAddToCart(e)}
+            >
+              Add to Cart
+            </Link>
+          )}
         </div>
       </div>
     </div>
