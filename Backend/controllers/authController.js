@@ -40,11 +40,15 @@ const handleLogin = async (req, res) => {
   if (!match) return res.status(401).json({ message: "Wrong Password" });
 
   if (match) {
+    let isAdmin = false;
+
+    if (foundAccount.isAdmin) isAdmin = true;
+
     const accessToken = jwt.sign(
       {
         user: {
           id: foundAccount.id,
-          isAmin: foundAccount.isAdmin,
+          isAdmin: foundAccount.isAdmin,
         },
       },
       process.env.ACCESS_TOKEN_SECRET,
@@ -82,6 +86,7 @@ const handleLogin = async (req, res) => {
     res.json({
       token: accessToken,
       userId: currentAccount.id,
+      isAdmin: isAdmin,
       message: "Login successfully!",
     });
   } else {

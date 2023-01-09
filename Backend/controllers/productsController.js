@@ -67,6 +67,27 @@ const getAllProducts = (req, res) => {
 };
 
 //**********************************************************
+//********************** GET PRODUCT ***********************
+//**********************************************************
+
+const getProduct = async (req, res) => {
+  const id = req.params.id;
+
+  if (!id) return res.status(401).json({ message: "Product ID is required" });
+
+  const foundedProduct = productsDB.products.find(
+    (product) => product.id === id
+  );
+
+  if (!foundedProduct)
+    return res
+      .status(401)
+      .json({ message: `Product with id ${id} not found!` });
+
+  res.status(201).json(foundedProduct);
+};
+
+//**********************************************************
 //********************** ADD TO CART ***********************
 //**********************************************************
 
@@ -93,4 +114,9 @@ const addProductToCart = async (req, res) => {
   res.status(201).json(objectProduct);
 };
 
-module.exports = { addNewProduct, getAllProducts, addProductToCart };
+module.exports = {
+  addNewProduct,
+  getAllProducts,
+  addProductToCart,
+  getProduct,
+};
