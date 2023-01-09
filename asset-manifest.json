@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/online-shop/static/css/main.a7bdcc17.css",
-    "main.js": "/online-shop/static/js/main.bc460aaf.js",
-    "static/media/eyeglasses.jpg": "/online-shop/static/media/eyeglasses.1f144fd659cba0948fcb.jpg",
-    "static/media/sunglasses.jpeg": "/online-shop/static/media/sunglasses.b05f1e58f67041e8f6bb.jpeg",
-    "static/media/logo.png": "/online-shop/static/media/logo.1d4917c76f5f7e8ebcb1.png",
-    "index.html": "/online-shop/index.html",
-    "main.a7bdcc17.css.map": "/online-shop/static/css/main.a7bdcc17.css.map",
-    "main.bc460aaf.js.map": "/online-shop/static/js/main.bc460aaf.js.map"
+    "main.css": "/online-shop/frontend/static/css/main.a7bdcc17.css",
+    "main.js": "/online-shop/frontend/static/js/main.b580cce2.js",
+    "static/media/eyeglasses.jpg": "/online-shop/frontend/static/media/eyeglasses.1f144fd659cba0948fcb.jpg",
+    "static/media/sunglasses.jpeg": "/online-shop/frontend/static/media/sunglasses.b05f1e58f67041e8f6bb.jpeg",
+    "static/media/logo.png": "/online-shop/frontend/static/media/logo.1d4917c76f5f7e8ebcb1.png",
+    "index.html": "/online-shop/frontend/index.html",
+    "main.a7bdcc17.css.map": "/online-shop/frontend/static/css/main.a7bdcc17.css.map",
+    "main.b580cce2.js.map": "/online-shop/frontend/static/js/main.b580cce2.js.map"
   },
   "entrypoints": [
     "static/css/main.a7bdcc17.css",
-    "static/js/main.bc460aaf.js"
+    "static/js/main.b580cce2.js"
   ]
 }
