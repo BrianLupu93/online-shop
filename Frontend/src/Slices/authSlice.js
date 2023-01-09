@@ -13,6 +13,11 @@ export const fetchLogin = createAsyncThunk(
     }
   }
 );
+export const fetchLogout = createAsyncThunk("auth/fetchLogout", async () => {
+  const response = await axios.post(url.logout);
+
+  return response.data;
+});
 
 const authSlice = createSlice({
   name: "auth",
@@ -35,6 +40,25 @@ const authSlice = createSlice({
         state.isLoggedIn = true;
       })
       .addCase(fetchLogin.rejected, (state, action) => {
+        state.fetching = false;
+        state.error = action.payload.message;
+        state.isLoggedIn = false;
+      })
+      .addCase(fetchLogout.pending, (state) => {
+        state.fetching = true;
+        state.userId = "";
+        state.token = "";
+        state.isLoggedIn = false;
+      })
+      .addCase(fetchLogout.fulfilled, (state, action) => {
+        state.fetching = false;
+        state.userId = "";
+        state.token = "";
+        state.error = "";
+        state.message = action.payload.message;
+        state.isLoggedIn = false;
+      })
+      .addCase(fetchLogout.rejected, (state, action) => {
         state.fetching = false;
         state.error = action.payload.message;
         state.isLoggedIn = false;

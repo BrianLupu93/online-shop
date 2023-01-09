@@ -15,10 +15,14 @@ export const getAccountDetails = createAsyncThunk(
   }
 );
 
+const initialState = {};
+
 const accountSlice = createSlice({
   name: "account",
-  initialState: {},
-  reducers: {},
+  initialState,
+  reducers: {
+    logoutAccount: () => initialState,
+  },
   extraReducers: (builder) => {
     builder
       .addCase(getAccountDetails.pending, (state) => {
@@ -39,3 +43,5 @@ const accountSlice = createSlice({
 });
 
 export default accountSlice.reducer;
+
+export const { logoutAccount } = accountSlice.actions;

@@ -1,14 +1,26 @@
 import React from "react";
-import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../../images/logo.png";
 import { BsBagFill } from "react-icons/bs";
+import { fetchLogout } from "../../Slices/authSlice";
 
 const Navbar = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const cartTotalNr = useSelector((state) => state.cart.cartItems.length);
   const userName = useSelector(
     (state) => `${state.account.firstName} ${state.account.lastName}`
   );
+  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
+
+  const handleLogin = () => {
+    if (isLoggedIn) {
+      dispatch(fetchLogout());
+    }
+
+    if (!isLoggedIn) navigate("/login");
+  };
 
   return (
     <div className="navbar-container ">
@@ -59,9 +71,12 @@ const Navbar = () => {
                 </a>
                 <ul className="dropdown-menu ">
                   <li>
-                    <a className="dropdown-item" href="/login">
-                      Login
-                    </a>
+                    <button
+                      className="dropdown-item"
+                      onClick={() => handleLogin()}
+                    >
+                      {isLoggedIn ? "Logout" : "Login"}
+                    </button>
                   </li>
                   <li>
                     <a className="dropdown-item" href="/">

@@ -7,7 +7,7 @@ export const addToCart = createAsyncThunk(
   async (id, { rejectWithValue }) => {
     try {
       const response = await axios.get(`${url.addToCart}/${id}`);
-      console.log(response.data);
+
       return response.data;
     } catch (error) {
       rejectWithValue(error);
