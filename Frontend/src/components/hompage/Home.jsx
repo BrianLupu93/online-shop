@@ -4,7 +4,7 @@ import ProductCard from "../productCard/ProductCard";
 import "./Home.css";
 import Spinner from "../../utils/spinner/Spinner";
 
-import { getAccountDetails } from "../../Slices/accountSlice";
+import { getAccountDetails, logoutAccount } from "../../Slices/accountSlice";
 import { getProducts } from "../../Slices/productsSlice";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -21,6 +21,7 @@ const Home = () => {
 
   useEffect(() => {
     if (isLoggedIn) dispatch(getAccountDetails(userId));
+    if (!isLoggedIn) dispatch(logoutAccount());
   }, [isLoggedIn]);
 
   return (
