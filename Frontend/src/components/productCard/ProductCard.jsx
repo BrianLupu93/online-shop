@@ -56,7 +56,7 @@ const ProductCard = ({
           ) : (
             <Link
               to="/product-details"
-              state={{ id: id, handleAddToCart: handleAddToCart }}
+              state={{ id: id }}
               className="text-body text-decoration-none"
             >
               <h5 className="card-title text-center">{title.toUpperCase()}</h5>
@@ -65,7 +65,7 @@ const ProductCard = ({
 
           <div className="rating-element d-flex justify-content-center ">
             <p className="mx-2">
-              {stars?.map((star, i) => (
+              {stars?.map((i) => (
                 <span key={i}>⭐</span>
               ))}
             </p>

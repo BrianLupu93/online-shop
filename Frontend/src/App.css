@@ -131,6 +131,10 @@ h1 {
   color: white;
 }
 
+.product-details {
+  height: auto !important;
+}
+
 .error-message {
   color: red;
 }
