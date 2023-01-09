@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import url from "../../URL_Routes";
@@ -58,6 +58,9 @@ const Register = () => {
 
   return (
     <div className="register-container">
+      <Link className=" text-center text-body text-decoration-none" to="/">
+        <h3>e-SHOP</h3>
+      </Link>
       <h1>Register</h1>
       <form className="row g-3 " onSubmit={handleSubmit(onSubmit)}>
         <div className="col-md-4">

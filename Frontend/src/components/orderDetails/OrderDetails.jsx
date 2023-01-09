@@ -1,26 +1,62 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
 
 const OrderDetails = () => {
   const navigate = useNavigate();
 
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => {
+    console.log(data);
+  };
+
   return (
     <div className="order-details-container">
       <h1 className="mb-5">Order Details</h1>
-      <form onSubmit={() => navigate("/")}>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <div className="invoice-details row g-3">
           <h5>Invoice</h5>
           <div className="col-md-6">
             <label htmlFor="lastName" className="form-label">
               Last Name
             </label>
-            <input type="text" className="form-control" />
+            <input
+              type="text"
+              className="form-control"
+              {...register("lastName", {
+                required: {
+                  value: true,
+                  message: "Last Name is required",
+                },
+              })}
+            />
+            {errors.lastName && (
+              <p className="error-message">{errors.lastName.message}</p>
+            )}
           </div>
           <div className="col-md-6">
             <label htmlFor="firstName" className="form-label">
               First Name
             </label>
-            <input type="text" className="form-control" />
+            <input
+              type="text"
+              className="form-control"
+              {...register("firstName", {
+                required: {
+                  value: true,
+                  message: "First Name is required",
+                },
+              })}
+            />
+            {errors.firstName && (
+              <p className="error-message">{errors.firstName.message}</p>
+            )}
           </div>
           <div className="col-12">
             <label htmlFor="inputAddress" className="form-label">
@@ -30,31 +66,88 @@ const OrderDetails = () => {
               type="text"
               className="form-control"
               placeholder="1234 Main St"
+              {...register("streetAndNum", {
+                required: {
+                  value: true,
+                  message: "Adress is required",
+                },
+              })}
             />
+            {errors.streetAndNum && (
+              <p className="error-message">{errors.streetAndNum.message}</p>
+            )}
           </div>
           <div className="col-md-6">
             <label htmlFor="inputCity" className="form-label">
               City
             </label>
-            <input type="text" className="form-control" />
+            <input
+              type="text"
+              className="form-control"
+              {...register("city", {
+                required: {
+                  value: true,
+                  message: "City is required",
+                },
+              })}
+            />
+            {errors.city && (
+              <p className="error-message">{errors.city.message}</p>
+            )}
           </div>
           <div className="col-md-4">
             <label htmlFor="inputCity" className="form-label">
               State
             </label>
-            <input type="text" className="form-control" />
+            <input
+              type="text"
+              className="form-control"
+              {...register("state", {
+                required: {
+                  value: true,
+                  message: "State is required",
+                },
+              })}
+            />
+            {errors.state && (
+              <p className="error-message">{errors.state.message}</p>
+            )}
           </div>
           <div className="col-md-2">
             <label htmlFor="inputZip" className="form-label">
               Zip
             </label>
-            <input type="text" className="form-control" />
+            <input
+              type="text"
+              className="form-control"
+              {...register("zip", {
+                required: {
+                  value: true,
+                  message: "Zip is required",
+                },
+              })}
+            />
+            {errors.zip && (
+              <p className="error-message">{errors.zip.message}</p>
+            )}
           </div>
           <div className="col-md-3">
             <label htmlFor="inputPhone" className="form-label">
               Phone
             </label>
-            <input type="text" className="form-control" />
+            <input
+              type="text"
+              className="form-control"
+              {...register("phone", {
+                required: {
+                  value: true,
+                  message: "Phone is required",
+                },
+              })}
+            />
+            {errors.phone && (
+              <p className="error-message">{errors.phone.message}</p>
+            )}
           </div>
           <div className="col-12">
             <div className="form-check">
@@ -71,53 +164,25 @@ const OrderDetails = () => {
         </div>
         <div className="shipping-details row g-3">
           <h5>Shipping</h5>
-          <div className="col-3">
-            <div className="form-check">
-              <input
-                className="form-check-input"
-                type="checkbox"
-                id="gridCheck"
-              />
-              <label className="form-check-label" htmlFor="gridCheck">
-                Standard POST <strong>Free </strong> (7-9 days)
-              </label>
-            </div>
-          </div>
-          <div className="col-3">
-            <div className="form-check">
-              <input
-                className="form-check-input"
-                type="checkbox"
-                id="gridCheck"
-              />
-              <label className="form-check-label" htmlFor="gridCheck">
-                UPS Ground <strong>7,99$ </strong> (5-7 days)
-              </label>
-            </div>
-          </div>
-          <div className="col-3">
-            <div className="form-check">
-              <input
-                className="form-check-input"
-                type="checkbox"
-                id="gridCheck"
-              />
-              <label className="form-check-label" htmlFor="gridCheck">
-                FedEx Day<strong>9,99$ </strong> (3-5 days)
-              </label>
-            </div>
-          </div>
-          <div className="col-3">
-            <div className="form-check">
-              <input
-                className="form-check-input"
-                type="checkbox"
-                id="gridCheck"
-              />
-              <label className="form-check-label" htmlFor="gridCheck">
-                UPS Air <strong>12,99$ </strong> (1-2 days)
-              </label>
-            </div>
+          <div className="col-12">
+            <select
+              className="form-select form-select-lg mb-3"
+              aria-label=".form-select-lg example"
+              {...register("shipping")}
+            >
+              <option value={{ shipping: "standard", price: 0 }}>
+                Standard POST Free (7-9 days)
+              </option>
+              <option value={{ shipping: "upsGround", price: 7.99 }}>
+                UPS Ground 7,99$ (5-7 days)
+              </option>
+              <option value={{ shipping: "feedEx", price: 9.99 }}>
+                FedEx Day9,99$ (3-5 days)
+              </option>
+              <option value={{ shipping: "upsAir", price: 12.99 }}>
+                UPS Air 12,99$ (1-2 days)
+              </option>
+            </select>
           </div>
         </div>
 

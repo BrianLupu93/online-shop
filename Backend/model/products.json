@@ -57,20 +57,7 @@
     "reviews": 5,
     "stars": [0, 1, 2, 3, 4]
   },
-  {
-    "category": "GLASSES",
-    "frameType": "semiFrame",
-    "gender": "male",
-    "frameForm": "rectangular",
-    "brand": "rayBan",
-    "model": "RB450",
-    "color": "green",
-    "price": "247",
-    "order": false,
-    "stock": "11",
-    "reviews": 7,
-    "stars": [0, 1, 2]
-  },
+
   {
     "category": "GLASSES",
     "frameType": "completeFrame",

@@ -1,6 +1,21 @@
 h1 {
   color: rgb(122, 122, 122);
 }
+.navbar,
+.navbar-expand-lg {
+  padding-left: 8rem !important;
+}
+
+.bag-total {
+  display: flex;
+  width: 20px !important;
+  height: 20px !important;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: rgb(236, 236, 41);
+}
 
 .login-container {
   width: 50vw;
@@ -20,6 +35,10 @@ h1 {
   width: 40vw;
 }
 
+.logo-image {
+  height: 6vh;
+  margin-left: 1rem;
+}
 .carousel-container {
   width: 50%;
   margin-left: auto;

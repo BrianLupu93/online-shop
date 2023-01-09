@@ -29,9 +29,9 @@ const Login = () => {
 
   return (
     <div className="login-container">
-      <a className=" text-center text-body text-decoration-none" href="/">
+      <Link className=" text-center text-body text-decoration-none" to="/">
         <h3>e-SHOP</h3>
-      </a>
+      </Link>
       <h1>Login</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="mb-3">

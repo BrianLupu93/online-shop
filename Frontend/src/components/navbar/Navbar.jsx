@@ -1,6 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import logo from "../../images/logo.png";
+import { BsBagFill } from "react-icons/bs";
 
 const Navbar = () => {
   const cartTotalNr = useSelector((state) => state.cart.cartItems.length);
@@ -13,7 +15,8 @@ const Navbar = () => {
       <nav className=" navbar navbar-expand-lg bg-body-tertiary px-5  fixed-top opacity-75 ">
         <div className="container-fluid px-5">
           <Link className="navbar-brand " to="/">
-            e-SHOP
+            e-Shop
+            <img src={logo} alt="logo" className="logo-image" />
           </Link>
           <button
             className="navbar-toggler"
@@ -84,17 +87,10 @@ const Navbar = () => {
                   aria-current="page"
                   to="/cart"
                 >
-                  Cart
-                  <span>
-                    {" "}
-                    ({cartTotalNr}{" "}
-                    {cartTotalNr === 1
-                      ? "items"
-                      : cartTotalNr === 1
-                      ? "item"
-                      : "items"}
-                    )
-                  </span>
+                  <div className="d-flex">
+                    <BsBagFill style={{ fontSize: "1.5rem" }} />
+                    <div className="bag-total">{cartTotalNr}</div>
+                  </div>
                 </Link>
               </li>
             </ul>

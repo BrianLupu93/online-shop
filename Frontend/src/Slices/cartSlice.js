@@ -28,6 +28,14 @@ const cartSlice = createSlice({
 
       state.cartItems = updateCart;
     },
+
+    getSubtotal: (state) => {
+      let subTotal = 0;
+      state.cartItems.map(
+        (item) => (subTotal = subTotal + parseInt(item.price))
+      );
+      state.subTotal = subTotal;
+    },
   },
   extraReducers: (bulider) => {
     bulider
@@ -47,4 +55,4 @@ const cartSlice = createSlice({
 
 export default cartSlice.reducer;
 
-export const { removeFromCart } = cartSlice.actions;
+export const { removeFromCart, getSubtotal } = cartSlice.actions;
